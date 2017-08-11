@@ -1,17 +1,3 @@
-/* var applicationModule = angular.module("applicationModule", ["ngRoute"]);
-
-applicationModule.config(function ($routeProvider) {
-    $routeProvider
-        .when('/', {
-            templateUrl: "app/components/home/homeView.html",
-            controller: "homeController"
-        })
-        .otherwise({
-            redirectTo: '/'
-        });
-
-}); */
-
 var applicationModule = angular.module("applicationModule", ["ui.router"]);
 
 applicationModule.config(function ($urlRouterProvider, $stateProvider) {
@@ -25,4 +11,35 @@ applicationModule.config(function ($urlRouterProvider, $stateProvider) {
             controller: "homeController"
 
         })
-});
+        .state("productList", {
+            url: "/product",
+            templateUrl: "app/components/product/productListView.html",
+            controller: "productListController"
+            
+        })
+        .state("productEdit", {
+            url: "/product/edit/:id",
+            templateUrl: "app/components/product/productEditView.html",
+            controller: "producEditController",
+            resolve: {
+                id: function ($stateParams) {
+                    return $stateParams.id;
+                }
+            }
+        })
+         .state("productDetail", {
+            url: "/product/detail/:id",
+            templateUrl: "app/components/product/productDetailView.html",
+            controller: "productDetailController",
+            resolve: {
+                id: function ($stateParams) {
+                    return $stateParams.id;
+                }
+            }
+        })
+})
+.constant("GlobalInfo",
+    {
+        apiUrl: "/api"
+    });    
+;
