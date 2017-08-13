@@ -20,7 +20,7 @@ applicationModule.config(function ($urlRouterProvider, $stateProvider) {
         .state("productEdit", {
             url: "/product/edit/:id",
             templateUrl: "app/components/product/productEditView.html",
-            controller: "producEditController",
+            controller: "productEditController",
             resolve: {
                 id: function ($stateParams) {
                     return $stateParams.id;

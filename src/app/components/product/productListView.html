@@ -1,1 +1,22 @@
-list
+<div>
+    <a ui-sref="productEdit({id:0})">Add</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="product in products">
+                <td>{{product.title}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.pricing}}</td>
+                <td> <a ui-sref="productDetail({id:product._id})">detail</a></td>
+                <td> <a ui-sref="productEdit({id:product._id})">edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>

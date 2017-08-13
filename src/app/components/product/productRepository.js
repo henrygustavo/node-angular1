@@ -5,7 +5,7 @@ angular.module("applicationModule").factory("productRepository", function ($http
         getAll: function () {
             var deferred = $q.defer();
 
-            http.get(GlobalInfo.apiUrl+"/products")
+            $http.get(GlobalInfo.apiUrl+"/products")
                 .success(function (response) {
 
                     deferred.resolve(response);
@@ -21,7 +21,7 @@ angular.module("applicationModule").factory("productRepository", function ($http
 
             var deferred = $q.defer();
 
-            http.get(GlobalInfo.apiUrl+"/products/" + id)
+            $http.get(GlobalInfo.apiUrl+"/products/" + id)
                 .success(function (response) {
 
                     deferred.resolve(response);
@@ -37,7 +37,7 @@ angular.module("applicationModule").factory("productRepository", function ($http
 
             var deferred = $q.defer();
 
-            http.post(GlobalInfo.apiUrl+"/products/", model)
+            $http.post(GlobalInfo.apiUrl+"/products/", model)
                 .success(function (response) {
 
                     deferred.resolve(response);
@@ -53,7 +53,7 @@ angular.module("applicationModule").factory("productRepository", function ($http
 
             var deferred = $q.defer();
 
-            http.put(GlobalInfo.apiUrl+"/products/", model)
+            $http.put(GlobalInfo.apiUrl+"/products/"+model._id, model)
                 .success(function (response) {
 
                     deferred.resolve(response);
@@ -67,7 +67,7 @@ angular.module("applicationModule").factory("productRepository", function ($http
         },
         delete: function (id) {
             var deferred = $q.defer();
-            http.delete(GlobalInfo.apiUrl+"/products/", id)
+            $http.delete(GlobalInfo.apiUrl+"/products/", id)
                 .success(function (response) {
 
                     deferred.resolve(response);

@@ -1,1 +1,12 @@
-Edit
+<form name="form" novalidate>
+
+    <input type="text" placeholder="Title" ng-model="model.title">
+
+    <input type="text" placeholder="Description" ng-model="model.description">
+
+    <input type="text" placeholder="Pricing" ng-model="model.pricing">
+
+    <button type="button" ng-click="save(model)" ng-disabled="form.$invalid">Save</button>
+    
+    <a ui-sref="productList">go Back</a>
+</form>
