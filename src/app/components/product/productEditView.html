@@ -1,35 +1,46 @@
-<form name="form" role="form" novalidate>
-    <div>
-        <label>Title</label>
+<form name="form">
 
-        <div ng-class="{'has-error': form.title.$dirty && form.title.$invalid}">
-            <input type="text" name="title" placeholder="Title" ng-model="model.title" required>
-        </div>
-        <div ng-messages="form.title.$error" ng-if="form.title.$dirty">
-            <div ng-messages-include="/app/assets/html/validation-messages.html"></div>
-        </div>
-    </div>
-    <div>
-        <label>Description</label>
+    <fieldset class="form-group">
+        <legend class="col-form-legend">
+            <h1> Product </h1>
+        </legend>
+        <div class="form-group">
+            <label>Title</label>
 
-        <div ng-class="{'has-error': form.description.$dirty && form.description.$invalid}">
-            <input type="text" name="description" placeholder="Description" ng-model="model.description" required>
+            <div ng-class="{'has-error': form.title.$dirty && form.title.$invalid}">
+                <input type="text" name="title" class="form-control" placeholder="Title" ng-model="model.title" required>
+            </div>
+            <div class="text-danger" ng-messages="form.title.$error" ng-if="form.title.$dirty">
+                <div ng-messages-include="/app/assets/html/validation-messages.html"></div>
+            </div>
         </div>
-        <div class="text-danger" ng-messages="form.description.$error" ng-if="form.description.$dirty">
-            <div ng-messages-include="/app/assets/html/validation-messages.html"></div>
-        </div>
-    </div>
-    <div>
-        <label>Pricing</label>
+        <div class="form-group">
+            <label>Description</label>
 
-        <div ng-class="{'has-error': form.pricing.$dirty && form.pricing.$invalid}">
-            <input type="text" name="pricing" placeholder="Pricing" ng-model="model.pricing" required>
+            <div ng-class="{'has-error': form.description.$dirty && form.description.$invalid}">
+                <input type="text" name="description" class="form-control" placeholder="Description" ng-model="model.description" required>
+            </div>
+            <div class="text-danger" ng-messages="form.description.$error" ng-if="form.description.$dirty">
+                <div ng-messages-include="/app/assets/html/validation-messages.html"></div>
+            </div>
         </div>
-        <div class="text-danger" ng-messages="form.pricing.$error" ng-if="form.pricing.$dirty">
-            <div ng-messages-include="/app/assets/html/validation-messages.html"></div>
-        </div>
-    </div>
-    <button type="button" ng-click="save(model)" ng-disabled="form.$invalid">Save</button>
+        <div class="form-group">
+            <label>Pricing</label>
 
-    <a ui-sref="productList">go Back</a>
+            <div ng-class="{'has-error': form.pricing.$dirty && form.pricing.$invalid}">
+                <input type="text" name="pricing" class="form-control" placeholder="Pricing" ng-model="model.pricing" required>
+            </div>
+            <div class="text-danger" ng-messages="form.pricing.$error" ng-if="form.pricing.$dirty">
+                <div ng-messages-include="/app/assets/html/validation-messages.html"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-6">
+                <a ui-sref="productList" class="btn btn-primary btn-block">Back</a>
+            </div>
+            <div class="col-md-6">
+                <button type="button" ng-click="save(model)" class="btn btn-primary btn-block" ng-disabled="form.$invalid">Save</button>
+            </div>
+        </div>
+    </fieldset>
 </form>

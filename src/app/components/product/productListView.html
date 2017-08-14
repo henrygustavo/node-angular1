@@ -1,22 +1,39 @@
 <div>
-    <a ui-sref="productEdit({id:0})">Add</a>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="product in products">
-                <td>{{product.title}}</td>
-                <td>{{product.description}}</td>
-                <td>{{product.pricing}}</td>
-                <td> <a ui-sref="productDetail({id:product._id})">detail</a></td>
-                <td> <a ui-sref="productEdit({id:product._id})">edit</a></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="col-md-12 col-lg-offset-4">
+            <h2>Products List</h2>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-primary" ui-sref="productEdit({id:0})">Add new product</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in products">
+                        <td>{{product.title}}</td>
+                        <td>{{product.description}}</td>
+                        <td>{{product.pricing}}</td>
+                        <td>
+                            <a ui-sref="productDetail({id:product._id})" class="btn btn-default">detail</a>
+                            <a ui-sref="productEdit({id:product._id})" class="btn btn-default">edit</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
