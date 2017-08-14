@@ -26,6 +26,7 @@ angular.module("applicationModule").controller("productEditController", function
             productRepository.update(model).then(function (response) {
 
                 alert(response.message);
+                $state.go("productList");
 
             }, function (error) {
 
@@ -37,6 +38,7 @@ angular.module("applicationModule").controller("productEditController", function
             productRepository.insert(model).then(function (response) {
 
                 alert(response.message);
+                $state.go("productList");
 
             }, function (error) {
 

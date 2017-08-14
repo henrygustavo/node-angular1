@@ -1,4 +1,4 @@
-var applicationModule = angular.module("applicationModule", ["ui.router"]);
+var applicationModule = angular.module("applicationModule", ["ui.router","ngMessages"]);
 
 applicationModule.config(function ($urlRouterProvider, $stateProvider) {
 
